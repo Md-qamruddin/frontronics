@@ -5,10 +5,10 @@ const SEO = ({
   title = 'Frontronics - AI-Powered Web Development Tools',
   description = 'Frontronics builds AI tools to reduce website development risks and time. We also create innovative electronic toys using smart tech.',
   canonical,
-  image = 'https://frontronics.netlify.app/static/media/frontronics.a7d5589f3c17807ddd65.jpg',
+  image = 'https://frontronics.in/static/media/frontronics.a7d5589f3c17807ddd65.jpg',
   type = 'website'
 }) => {
-  const siteUrl = 'https://frontronics.netlify.app';
+  const siteUrl = 'https://frontronics.in';
   const pageUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
 
   return (

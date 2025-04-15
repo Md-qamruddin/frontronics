@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://frontronics.netlify.app/sitemap.xml
+Sitemap: https://frontronics.in/sitemap.xml
 
 # Prevent crawling of potential development/test environments
 Disallow: /dev/
