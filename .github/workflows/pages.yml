@@ -36,7 +36,7 @@ jobs:
       - name: Upload build artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './build' # or './dist' if using Vite
+          path: './build'  # ✅ CRA uses 'build' not 'dist'
 
   deploy:
     needs: build
