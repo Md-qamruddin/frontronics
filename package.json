@@ -2,7 +2,6 @@
   "name": "frontronics",
   "version": "0.0.0",
   "private": true,
-  "homepage": "https://md-qamruddin.github.io/frontronics",
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@testing-library/jest-dom": "^5.17.0",
