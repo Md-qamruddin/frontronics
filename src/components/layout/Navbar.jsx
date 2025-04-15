@@ -1,7 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
-import { useTheme } from '../../context/ThemeContext';
 import logo from '../../assets/frontronics.jpg';
 import { motion } from 'framer-motion';
 
@@ -9,7 +8,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSupportOpen, setIsSupportOpen] = useState(false);
   const supportDropdownRef = useRef(null);
-  const { isDarkMode } = useTheme();
   const location = useLocation();
   const [imgError, setImgError] = useState(false);
 

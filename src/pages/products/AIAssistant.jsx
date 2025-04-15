@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaBrain, FaCode, FaBug, FaFileAlt, FaTachometerAlt } from 'react-icons/fa';
+import { FaCode, FaBug, FaFileAlt, FaTachometerAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const AIAssistant = () => {

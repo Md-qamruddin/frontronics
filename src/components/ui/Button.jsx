@@ -1,6 +1,5 @@
 import { forwardRef } from 'react';
 import { motion } from 'framer-motion';
-import { theme } from '../../theme';
 
 const Button = forwardRef(({
   children,
@@ -64,4 +63,4 @@ const Button = forwardRef(({
 
 Button.displayName = 'Button';
 
-export default Button; 
+export default Button;

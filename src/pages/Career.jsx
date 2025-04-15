@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaBriefcase, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 import PageLayout from '../components/layout/PageLayout';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
@@ -148,4 +148,4 @@ const Career = () => {
   );
 };
 
-export default Career; 
+export default Career;

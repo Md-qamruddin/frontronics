@@ -1,5 +1,5 @@
+import React from 'react';
 import { motion } from 'framer-motion';
-import { theme } from '../../theme';
 
 const Card = ({
   children,
@@ -48,4 +48,4 @@ Card.Header = CardHeader;
 Card.Body = CardBody;
 Card.Footer = CardFooter;
 
-export default Card; 
+export default Card;

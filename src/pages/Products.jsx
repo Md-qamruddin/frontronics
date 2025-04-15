@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaRobot, FaServer, FaShieldAlt, FaBrain, FaRocket } from 'react-icons/fa';
+import { FaRobot, FaServer, FaBrain, FaRocket } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Products = () => {
