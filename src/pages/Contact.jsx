@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import PageLayout from '../components/layout/PageLayout';
 
-const ContactUs = () => {
+const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -200,4 +200,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs; 
+export default Contact;

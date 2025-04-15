@@ -1,38 +1,28 @@
 import { motion } from 'framer-motion';
-import { FaRobot, FaBolt, FaPalette, FaMobile, FaCode, FaWrench } from 'react-icons/fa';
+import { FaRocket, FaChartLine, FaExclamationTriangle, FaChartBar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const FrontPilot = () => {
+const LaunchPad = () => {
   const features = [
     {
-      icon: <FaRobot className="w-6 h-6" />,
-      title: 'AI-Powered Design',
-      description: 'Generate stunning layouts and designs using advanced AI algorithms.'
+      icon: <FaRocket className="w-6 h-6" />,
+      title: 'One-click Deployment',
+      description: 'Deploy your applications with a single click to any cloud platform.'
     },
     {
-      icon: <FaBolt className="w-6 h-6" />,
-      title: 'Rapid Development',
-      description: 'Create landing pages in minutes instead of hours or days.'
+      icon: <FaChartLine className="w-6 h-6" />,
+      title: 'Performance Monitoring',
+      description: 'Monitor your application performance in real-time with detailed metrics.'
     },
     {
-      icon: <FaPalette className="w-6 h-6" />,
-      title: 'Custom Templates',
-      description: 'Choose from a variety of customizable templates for any industry.'
+      icon: <FaExclamationTriangle className="w-6 h-6" />,
+      title: 'Error Tracking',
+      description: 'Track and analyze errors across your application stack.'
     },
     {
-      icon: <FaMobile className="w-6 h-6" />,
-      title: 'Responsive Design',
-      description: 'All pages are automatically optimized for any device size.'
-    },
-    {
-      icon: <FaCode className="w-6 h-6" />,
-      title: 'Clean Code Output',
-      description: 'Generate production-ready, optimized code for your pages.'
-    },
-    {
-      icon: <FaWrench className="w-6 h-6" />,
-      title: 'Easy Customization',
-      description: 'Fine-tune every aspect of your design with our intuitive interface.'
+      icon: <FaChartBar className="w-6 h-6" />,
+      title: 'Analytics Dashboard',
+      description: 'Get comprehensive insights into your application usage and performance.'
     }
   ];
 
@@ -49,10 +39,10 @@ const FrontPilot = () => {
             className="text-center"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              FrontPilot
+              LaunchPad
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-              AI-powered landing page generator that creates stunning, responsive pages in minutes
+              Complete deployment and monitoring solution for your applications
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -83,14 +73,14 @@ const FrontPilot = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
-              Powerful Features
+              Key Features
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Everything you need to create beautiful landing pages quickly and efficiently
+              Streamline your deployment and monitoring process
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -124,13 +114,13 @@ const FrontPilot = () => {
             className="text-center"
           >
             <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
-              Ready to Build Your Landing Page?
+              Ready to Launch Your Application?
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-              Start creating beautiful, responsive landing pages in minutes with FrontPilot
+              Start using LaunchPad today and simplify your deployment process
             </p>
             <Link
-              to="/products"
+              to="/contact"
               className="bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-lg hover:opacity-90 transition-opacity inline-block"
             >
               Start Free Trial
@@ -142,4 +132,4 @@ const FrontPilot = () => {
   );
 };
 
-export default FrontPilot;
+export default LaunchPad;

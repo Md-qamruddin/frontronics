@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaGithub, FaTwitter, FaLinkedin, FaDiscord } from 'react-icons/fa';
+import { FaYoutube, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -70,32 +70,35 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Connect</h4>
+            <h4 className="text-lg font-semibold mb-4 text-gray-300">Connect</h4>
             <div className="flex space-x-4">
-              <button
+              <a
+                href="https://www.youtube.com/c/QAFELECTRONICS"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary transition-colors"
-                aria-label="GitHub"
+                aria-label="YouTube"
               >
-                <FaGithub size={24} />
-              </button>
-              <button
+                <FaYoutube size={24} />
+              </a>
+              <a
+                href="https://www.instagram.com/frontronics"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary transition-colors"
-                aria-label="Twitter"
+                aria-label="Instagram"
               >
-                <FaTwitter size={24} />
-              </button>
-              <button
+                <FaInstagram size={24} />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/frontronics"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary transition-colors"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin size={24} />
-              </button>
-              <button
-                className="text-gray-400 hover:text-primary transition-colors"
-                aria-label="Discord"
-              >
-                <FaDiscord size={24} />
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -110,4 +113,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Footer;

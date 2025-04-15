@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { theme } from '../../theme';
 
 const PageLayout = ({
   children,
@@ -11,7 +12,7 @@ const PageLayout = ({
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       {showHeader && (
-        <section className="relative py-32 overflow-hidden">
+        <section className="relative pt-8 pb-16 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <motion.div
@@ -21,12 +22,12 @@ const PageLayout = ({
               className="text-center"
             >
               {title && (
-                <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <h1 className="text-3xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                   {title}
                 </h1>
               )}
               {description && (
-                <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+                <p className="text-lg text-gray-600 dark:text-gray-300 mb-4 max-w-3xl mx-auto">
                   {description}
                 </p>
               )}
@@ -35,11 +36,11 @@ const PageLayout = ({
         </section>
       )}
 
-      <main className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 ${className}`} {...props}>
+      <main className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 ${className}`} {...props}>
         {children}
       </main>
     </div>
   );
 };
 
-export default PageLayout; 
+export default PageLayout;

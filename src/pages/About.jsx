@@ -1,29 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaRocket, FaUsers, FaLightbulb, FaHandshake } from 'react-icons/fa';
+import MrQamruddin from '../assets/Mr.Qamruddin.jpg';
 
 const About = () => {
   const teamMembers = [
     {
       id: 1,
-      name: 'John Doe',
+      name: 'Mr. Qamruddin',
       role: 'CEO & Founder',
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-      bio: 'Visionary leader with 15+ years of experience in software development and business strategy.'
-    },
-    {
-      id: 2,
-      name: 'Jane Smith',
-      role: 'CTO',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-      bio: 'Technology expert specializing in AI and cloud computing solutions.'
-    },
-    {
-      id: 3,
-      name: 'Mike Johnson',
-      role: 'Head of Product',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-      bio: 'Product management specialist with a focus on user experience and innovation.'
+      image: MrQamruddin,
+      bio: 'Visionary leader with extensive experience in software development and business strategy.'
     }
   ];
 
@@ -115,14 +102,14 @@ const About = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex justify-center">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={member.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="bg-gray-50 dark:bg-gray-900 rounded-lg overflow-hidden shadow-lg"
+                className="bg-gray-50 dark:bg-gray-900 rounded-lg overflow-hidden shadow-lg max-w-sm"
               >
                 <img
                   src={member.image}
@@ -147,4 +134,4 @@ const About = () => {
   );
 };
 
-export default About; 
+export default About;

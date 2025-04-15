@@ -1,13 +1,20 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Navbar from './components/Navbar'
+import Navbar from './components/layout/Navbar'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import Products from './pages/Products'
-import Contact from './pages/ContactUs'
-import FrontPilot from './pages/products/FrontPilot'
+import Contact from './pages/Contact'
 import Career from './pages/Career'
-import ScrollToTop from './components/ScrollToTop'
+import About from './pages/About'
+import Blog from './pages/Blog'
+import Payment from './pages/Payment'
+import FrontPilot from './pages/products/FrontPilot'
+import BackPilot from './pages/products/BackPilot'
+import AIAssistant from './pages/products/AIAssistant'
+import LaunchPad from './pages/products/LaunchPad'
+import Toys from './pages/products/Toys'
 import './App.css'
 
 const App = () => {
@@ -15,13 +22,20 @@ const App = () => {
     <div className="flex flex-col min-h-screen">
       <ScrollToTop />
       <Navbar />
-      <main className="flex-grow">
+      <main className="flex-grow pt-16">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/contact-us" element={<Contact />} />
-          <Route path="/products/frontpilot" element={<FrontPilot />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/career" element={<Career />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/payment" element={<Payment />} />
+          <Route path="/products/frontpilot" element={<FrontPilot />} />
+          <Route path="/products/backpilot" element={<BackPilot />} />
+          <Route path="/products/ai-assistant" element={<AIAssistant />} />
+          <Route path="/products/launchpad" element={<LaunchPad />} />
+          <Route path="/products/toys" element={<Toys />} />
         </Routes>
       </main>
       <Footer />
@@ -29,4 +43,4 @@ const App = () => {
   )
 }
 
-export default App 
+export default App

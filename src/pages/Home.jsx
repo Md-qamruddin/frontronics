@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FaRobot, FaServer, FaShieldAlt, FaBrain, FaCode } from 'react-icons/fa';
+import { FaRobot, FaServer, FaShieldAlt, FaBrain, FaRocket, FaCode } from 'react-icons/fa';
 
 // Memoize features array to prevent unnecessary re-renders
 const features = [
@@ -18,7 +18,7 @@ const features = [
   {
     title: 'Rapid Deployment',
     description: 'Deploy your applications with confidence and speed',
-    icon: <FaCode className="w-8 h-8" />,
+    icon: <FaRocket className="w-8 h-8" />,
   },
   {
     title: 'Modern Stack',
@@ -35,24 +35,28 @@ const Home = () => {
       description: 'AI-powered landing page generator that creates stunning, responsive pages in minutes.',
       icon: <FaRobot className="w-8 h-8" />,
       link: '/products/frontpilot',
+      comingSoon: false
     },
     {
-      title: 'Coming Soon',
+      title: 'BackPilot',
       description: 'Automated CRUD and internal tools builder to streamline your backend development.',
       icon: <FaServer className="w-8 h-8" />,
       link: '/products/backpilot',
+      comingSoon: true
     },
     {
-      title: 'Coming Soon',
-      description: 'Advanced security platform as a service for modern applications.',
-      icon: <FaShieldAlt className="w-8 h-8" />,
-      link: '/products/secupaas',
+      title: 'LaunchPad',
+      description: 'Complete deployment and monitoring solution for your applications.',
+      icon: <FaRocket className="w-8 h-8" />,
+      link: '/products/launchpad',
+      comingSoon: true
     },
     {
-      title: 'Coming Soon',
+      title: 'AI Assistant',
       description: 'Intelligent coding assistant that helps you write better code faster.',
       icon: <FaBrain className="w-8 h-8" />,
       link: '/products/ai-assistant',
+      comingSoon: true
     },
   ], []);
 
@@ -118,7 +122,7 @@ const Home = () => {
                 Explore Our Tools
               </Link>
               <Link
-                to="/contact-us"
+                to="/contact"
                 className="bg-white dark:bg-gray-800 text-primary border-2 border-primary px-8 py-3 rounded-lg font-semibold text-lg hover:bg-primary/10 transition-colors transform hover:scale-105 transition-transform"
               >
                 Contact Us
@@ -204,27 +208,26 @@ const Home = () => {
                   {product.description}
                 </p>
                 <div className="flex items-center gap-4">
-                  {product.title === 'FrontPilot' ? (
-                    <Link
-                      to={product.link}
-                      className="inline-flex items-center text-primary hover:text-secondary transition-colors"
+                  <Link
+                    to={product.link}
+                    className="inline-flex items-center text-primary hover:text-secondary transition-colors"
+                  >
+                    Learn More
+                    <svg
+                      className="w-5 h-5 ml-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
                     >
-                      Learn More
-                      <svg
-                        className="w-5 h-5 ml-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </Link>
-                  ) : (
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </Link>
+                  {product.comingSoon && (
                     <span className="text-primary font-semibold">Coming Soon</span>
                   )}
                 </div>
@@ -248,22 +251,27 @@ const Home = () => {
               Ready to Transform Your Development?
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-              Start building better applications faster with our AI-powered tools. Our team is ready to help you get started.
+              Start building better applications faster with our AI-powered tools
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
               <Link
-                to="/contact-us"
-                className="bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-lg hover:opacity-90 transition-opacity inline-block"
+                to="/products"
+                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors shadow-md hover:shadow-lg"
+              >
+                Start Free Trial
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center px-6 py-3 border border-primary text-base font-medium rounded-md text-primary hover:bg-primary/10 transition-colors"
               >
                 Contact Us
               </Link>
-              <Link
-                to="/products"
-                className="border-2 border-primary text-primary font-semibold py-3 px-8 rounded-lg hover:bg-primary/10 transition-colors inline-block"
-              >
-                View All Products
-              </Link>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -271,4 +279,4 @@ const Home = () => {
   );
 };
 
-export default Home; 
+export default Home;

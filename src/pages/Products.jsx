@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaRobot, FaServer, FaShieldAlt, FaBrain } from 'react-icons/fa';
+import { FaRobot, FaServer, FaShieldAlt, FaBrain, FaRocket } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Products = () => {
@@ -9,28 +9,32 @@ const Products = () => {
       description: 'AI-powered landing page generator that creates stunning, responsive pages in minutes.',
       icon: <FaRobot className="w-8 h-8" />,
       features: ['AI Integration', 'Responsive Design', 'Custom Templates'],
-      link: '/products/frontpilot'
+      link: '/products/frontpilot',
+      comingSoon: false
     },
     {
-      title: 'Coming Soon',
+      title: 'BackPilot',
       description: 'Automated CRUD and internal tools builder to streamline your backend development.',
       icon: <FaServer className="w-8 h-8" />,
       features: ['Auto CRUD', 'API Generation', 'Database Integration'],
-      link: '/products/backpilot'
+      link: '/products/backpilot',
+      comingSoon: true
     },
     {
-      title: 'Coming Soon',
-      description: 'Advanced security platform as a service for modern applications.',
-      icon: <FaShieldAlt className="w-8 h-8" />,
-      features: ['Threat Detection', 'Real-time Protection', 'Compliance Tools'],
-      link: '/products/secupaas'
-    },
-    {
-      title: 'Coming Soon',
+      title: 'AI Assistant',
       description: 'Intelligent coding assistant that helps you write better code faster.',
       icon: <FaBrain className="w-8 h-8" />,
       features: ['Code Suggestions', 'Bug Detection', 'Documentation Generation'],
-      link: '/products/ai-assistant'
+      link: '/products/ai-assistant',
+      comingSoon: true
+    },
+    {
+      title: 'LaunchPad',
+      description: 'Complete deployment and monitoring solution for your applications.',
+      icon: <FaRocket className="w-8 h-8" />,
+      features: ['One-click Deploy', 'Performance Monitoring', 'Error Tracking'],
+      link: '/products/launchpad',
+      comingSoon: true
     }
   ];
 
@@ -84,15 +88,14 @@ const Products = () => {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-6">
-                  {product.title === 'FrontPilot' ? (
-                    <Link
-                      to={product.link}
-                      className="bg-gradient-to-r from-primary to-secondary text-white font-semibold py-2 px-6 rounded-lg hover:opacity-90 transition-opacity inline-block"
-                    >
-                      Learn More
-                    </Link>
-                  ) : (
+                <div className="mt-6 flex items-center gap-4">
+                  <Link
+                    to={product.link}
+                    className="bg-gradient-to-r from-primary to-secondary text-white font-semibold py-2 px-6 rounded-lg hover:opacity-90 transition-opacity inline-block"
+                  >
+                    Learn More
+                  </Link>
+                  {product.comingSoon && (
                     <span className="text-primary font-semibold">Coming Soon</span>
                   )}
                 </div>
@@ -120,7 +123,7 @@ const Products = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/contact-us"
+                to="/contact"
                 className="bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-lg hover:opacity-90 transition-opacity inline-block"
               >
                 Contact Us
@@ -139,4 +142,4 @@ const Products = () => {
   );
 };
 
-export default Products; 
+export default Products;
