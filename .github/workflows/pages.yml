@@ -33,15 +33,10 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v4
-        with:
-          enablement: true
-
       - name: Upload build artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './build' # Or './dist' if you're using Vite
+          path: './build' # or './dist' if using Vite
 
   deploy:
     needs: build
