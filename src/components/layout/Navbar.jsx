@@ -7,6 +7,8 @@ import { motion } from 'framer-motion';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSupportOpen, setIsSupportOpen] = useState(false);
+  // New state to track open/closed state of each mobile dropdown
+  const [mobileDropdowns, setMobileDropdowns] = useState({});
   const supportDropdownRef = useRef(null);
   const location = useLocation();
   const [imgError, setImgError] = useState(false);
@@ -21,6 +23,21 @@ const Navbar = () => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsOpen(false);
+    setIsSupportOpen(false);
+    setMobileDropdowns({});
+  }, [location.pathname]);
+  
+  // Toggle a specific mobile dropdown
+  const toggleMobileDropdown = (itemName) => {
+    setMobileDropdowns(prev => ({
+      ...prev,
+      [itemName]: !prev[itemName]
+    }));
+  };
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -47,7 +64,7 @@ const Navbar = () => {
   return (
     <nav className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-lg fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center space-x-2">
@@ -55,22 +72,23 @@ const Navbar = () => {
                 <img 
                   src={logo} 
                   alt="Frontronics Logo" 
-                  className="h-12 w-12 object-contain"
+                  className="h-10 w-10 md:h-12 md:w-12 object-contain"
                   onError={() => setImgError(true)}
+                  loading="eager"
                 />
               ) : (
-                <span className="h-12 w-12 flex items-center justify-center bg-primary text-white text-xl font-bold rounded">
+                <span className="h-10 w-10 md:h-12 md:w-12 flex items-center justify-center bg-primary text-white text-xl font-bold rounded">
                   F
                 </span>
               )}
-              <span className="text-2xl font-bold text-gray-900 dark:text-white">
+              <span className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
                 Frontronics
               </span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
             {navItems.map((item) => (
               item.submenu ? (
                 <div key={item.name} className="relative" ref={supportDropdownRef}>
@@ -81,19 +99,21 @@ const Navbar = () => {
                         ? 'text-primary dark:text-primary'
                         : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary'
                       }`}
+                    aria-expanded={isSupportOpen}
+                    aria-haspopup="true"
                   >
                     {item.name}
                     <FaChevronDown className={`ml-1 h-4 w-4 transform transition-transform ${isSupportOpen ? 'rotate-180' : ''}`} />
                     <div className={`absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 transition-transform origin-left ${isSupportOpen ? 'scale-x-100' : ''}`} />
                   </button>
                   {isSupportOpen && (
-                    <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5">
+                    <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 z-10">
                       <div className="py-1" role="menu" aria-orientation="vertical">
                         {item.submenu.map((subItem) => (
                           <Link
                             key={subItem.name}
                             to={subItem.path}
-                            className={`block px-4 py-2 text-sm transition-colors ${
+                            className={`block px-4 py-3 text-sm transition-colors ${
                               subItem.highlighted 
                                 ? 'bg-primary text-white dark:text-white'
                                 : isActivePath(subItem.path)
@@ -101,6 +121,7 @@ const Navbar = () => {
                                   : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-700'
                             }`}
                             onClick={() => setIsSupportOpen(false)}
+                            role="menuitem"
                           >
                             {subItem.name}
                           </Link>
@@ -117,7 +138,7 @@ const Navbar = () => {
                 >
                   <Link
                     to={item.path}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors relative group ${
+                    className={`px-4 py-2 rounded-md text-sm font-medium transition-colors relative group ${
                       isPaymentTab(item.path)
                         ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-lg hover:shadow-xl transform transition-all duration-300'
                         : ''
@@ -148,8 +169,11 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary p-2 rounded-md"
+              className="inline-flex items-center justify-center p-3 rounded-md text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
+              aria-expanded={isOpen}
+              aria-label={isOpen ? "Close menu" : "Open menu"}
             >
+              <span className="sr-only">{isOpen ? "Close menu" : "Open menu"}</span>
               {isOpen ? (
                 <FaTimes className="h-6 w-6" />
               ) : (
@@ -168,32 +192,33 @@ const Navbar = () => {
               item.submenu ? (
                 <div key={item.name}>
                   <button
-                    onClick={() => setIsSupportOpen(!isSupportOpen)}
-                    className={`w-full text-left px-3 py-2 rounded-md text-base font-medium inline-flex items-center justify-between ${
-                      isSupportOpen
+                    onClick={() => toggleMobileDropdown(item.name)}
+                    className={`w-full text-left px-4 py-3 rounded-md text-base font-medium inline-flex items-center justify-between ${
+                      mobileDropdowns[item.name]
                         ? 'text-primary dark:text-primary bg-gray-100 dark:bg-gray-800'
                         : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary'
                     }`}
+                    aria-expanded={mobileDropdowns[item.name]}
                   >
                     <span>{item.name}</span>
-                    <FaChevronDown className={`ml-1 h-4 w-4 transform transition-transform ${isSupportOpen ? 'rotate-180' : ''}`} />
+                    <FaChevronDown className={`ml-1 h-4 w-4 transform transition-transform ${mobileDropdowns[item.name] ? 'rotate-180' : ''}`} />
                   </button>
-                  {isSupportOpen && (
-                    <div className="pl-4">
+                  {mobileDropdowns[item.name] && (
+                    <div className="pl-4 mt-1 mb-2">
                       {item.submenu.map((subItem) => (
                         <Link
                           key={subItem.name}
                           to={subItem.path}
-                          className={`block px-3 py-2 rounded-md text-base font-medium ${
+                          className={`block px-4 py-3 mb-1 rounded-md text-base font-medium ${
                             subItem.highlighted 
                               ? 'bg-primary text-white dark:text-white'
                               : isActivePath(subItem.path)
                                 ? 'text-primary dark:text-primary bg-gray-100 dark:bg-gray-800'
-                                : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary'
+                                : 'text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800'
                           }`}
                           onClick={() => {
                             setIsOpen(false);
-                            setIsSupportOpen(false);
+                            setMobileDropdowns({});
                           }}
                         >
                           {subItem.name}
@@ -206,7 +231,7 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  className={`block px-4 py-3 rounded-md text-base font-medium ${
                     isPaymentTab(item.path)
                       ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-md'
                       : isActivePath(item.path)

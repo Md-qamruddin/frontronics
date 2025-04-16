@@ -15,6 +15,7 @@ import BackPilot from './pages/products/BackPilot'
 import AIAssistant from './pages/products/AIAssistant'
 import LaunchPad from './pages/products/LaunchPad'
 import Toys from './pages/products/Toys'
+import { SignIn, SignUp } from './components/auth'
 import './App.css'
 
 const App = () => {
@@ -22,7 +23,7 @@ const App = () => {
     <div className="flex flex-col min-h-screen">
       <ScrollToTop />
       <Navbar />
-      <main className="flex-grow pt-16">
+      <main className="flex-grow pt-14 sm:pt-16 md:pt-20">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
@@ -36,6 +37,8 @@ const App = () => {
           <Route path="/products/ai-assistant" element={<AIAssistant />} />
           <Route path="/products/launchpad" element={<LaunchPad />} />
           <Route path="/products/toys" element={<Toys />} />
+          <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
         </Routes>
       </main>
       <Footer />
