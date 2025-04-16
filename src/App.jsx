@@ -1,5 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
@@ -20,29 +21,31 @@ import './App.css'
 
 const App = () => {
   return (
-    <div className="flex flex-col min-h-screen">
-      <ScrollToTop />
-      <Navbar />
-      <main className="flex-grow pt-14 sm:pt-16 md:pt-20">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/career" element={<Career />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/payment" element={<Payment />} />
-          <Route path="/products/frontpilot" element={<FrontPilot />} />
-          <Route path="/products/backpilot" element={<BackPilot />} />
-          <Route path="/products/ai-assistant" element={<AIAssistant />} />
-          <Route path="/products/launchpad" element={<LaunchPad />} />
-          <Route path="/products/toys" element={<Toys />} />
-          <Route path="/sign-in" element={<SignIn />} />
-          <Route path="/sign-up" element={<SignUp />} />
-        </Routes>
-      </main>
-      <Footer />
-    </div>
+    <HelmetProvider>
+      <div className="flex flex-col min-h-screen">
+        <ScrollToTop />
+        <Navbar />
+        <main className="flex-grow pt-14 sm:pt-16 md:pt-20">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/career" element={<Career />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/payment" element={<Payment />} />
+            <Route path="/products/frontpilot" element={<FrontPilot />} />
+            <Route path="/products/backpilot" element={<BackPilot />} />
+            <Route path="/products/ai-assistant" element={<AIAssistant />} />
+            <Route path="/products/launchpad" element={<LaunchPad />} />
+            <Route path="/products/toys" element={<Toys />} />
+            <Route path="/sign-in" element={<SignIn />} />
+            <Route path="/sign-up" element={<SignUp />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </HelmetProvider>
   )
 }
 

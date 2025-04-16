@@ -1,20 +1,31 @@
 {
   "short_name": "Frontronics",
-  "name": "Frontronics - AI-powered development tools",
+  "name": "Frontronics - AI Development Tools",
+  "description": "AI-powered development tools for modern web applications",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "/static/media/frontronics.a7d5589f3c17807ddd65.jpg",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "/frontronics.jpg",
-      "type": "image/jpeg",
-      "sizes": "192x192"
+      "src": "/static/media/frontronics.a7d5589f3c17807ddd65.jpg",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
-} 
+  "theme_color": "#6366f1",
+  "background_color": "#ffffff",
+  "categories": ["development", "productivity", "tools"],
+  "screenshots": [
+    {
+      "src": "/static/media/frontronics.a7d5589f3c17807ddd65.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg"
+    }
+  ]
+}
