@@ -1,15 +1,38 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import PropTypes from 'prop-types';
 
 const SEO = ({ 
   title = 'Frontronics - AI-Powered Web Development Tools',
   description = 'Frontronics builds AI tools to reduce website development risks and time. We also create innovative electronic toys using smart tech.',
   canonical,
   image = 'https://frontronics.in/static/media/frontronics.a7d5589f3c17807ddd65.jpg',
-  type = 'website'
+  type = 'website',
+  keywords = 'AI tools, web development, electronic toys, smart technology, development automation, FrontPilot, BackPilot, AI Assistant'
 }) => {
   const siteUrl = 'https://frontronics.in';
   const pageUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
+  const imageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Frontronics",
+    "url": siteUrl,
+    "logo": imageUrl,
+    "description": description,
+    "sameAs": [
+      "https://twitter.com/frontronics",
+      "https://linkedin.com/company/frontronics"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-XXXXXXXXXX",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": ["English", "Hindi"]
+    }
+  };
 
   return (
     <Helmet>
@@ -22,38 +45,41 @@ const SEO = ({
       <meta property="og:type" content={type} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={imageUrl} />
       <meta property="og:url" content={pageUrl} />
       <meta property="og:site_name" content="Frontronics" />
+      <meta property="og:locale" content="en_IN" />
       
       {/* Twitter Card Tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={imageUrl} />
+      <meta name="twitter:site" content="@frontronics" />
+      <meta name="twitter:creator" content="@frontronics" />
       
       {/* Additional SEO Tags */}
       <meta name="robots" content="index, follow" />
-      <meta name="keywords" content="AI tools, web development, electronic toys, smart technology, development automation, FrontPilot, BackPilot, AI Assistant" />
+      <meta name="keywords" content={keywords} />
       <meta name="author" content="Frontronics" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="theme-color" content="#2563eb" />
       
-      {/* Structured Data - Organization */}
+      {/* Structured Data */}
       <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "Frontronics",
-          "url": siteUrl,
-          "logo": `${siteUrl}/static/media/frontronics.a7d5589f3c17807ddd65.jpg`,
-          "description": description,
-          "sameAs": [
-            "https://twitter.com/frontronics",
-            "https://linkedin.com/company/frontronics"
-          ]
-        })}
+        {JSON.stringify(structuredData)}
       </script>
     </Helmet>
   );
+};
+
+SEO.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  canonical: PropTypes.string,
+  image: PropTypes.string,
+  type: PropTypes.string,
+  keywords: PropTypes.string
 };
 
 export default SEO;

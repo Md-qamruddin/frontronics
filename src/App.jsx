@@ -41,6 +41,8 @@ const App = () => {
             <Route path="/products/toys" element={<Toys />} />
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/sign-up" element={<SignUp />} />
+            <Route path="/forgot-password" element={<div className="min-h-screen flex items-center justify-center">Forgot Password Page (Coming Soon)</div>} />
+            <Route path="/dashboard" element={<div className="min-h-screen flex items-center justify-center">Dashboard (Coming Soon)</div>} />
           </Routes>
         </main>
         <Footer />

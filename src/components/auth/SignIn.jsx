@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const SignIn = () => {
@@ -38,9 +38,9 @@ const SignIn = () => {
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
             Or{' '}
-            <a href="/signup" className="font-medium text-primary hover:text-primary/90">
+            <Link to="/sign-up" className="font-medium text-primary hover:text-primary/90">
               create a new account
-            </a>
+            </Link>
           </p>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
@@ -93,9 +93,9 @@ const SignIn = () => {
             </div>
 
             <div className="text-sm">
-              <a href="#" className="font-medium text-primary hover:text-primary/90">
+              <Link to="/forgot-password" className="font-medium text-primary hover:text-primary/90">
                 Forgot your password?
-              </a>
+              </Link>
             </div>
           </div>
 
