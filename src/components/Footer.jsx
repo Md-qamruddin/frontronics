@@ -25,7 +25,7 @@ const Footer = () => {
 
           <div>
             <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Quick Links</h4>
-            <ul className="space-y-2" role="list">
+            <ul className="space-y-2">
               <li>
                 <Link 
                   to="/" 
@@ -83,7 +83,7 @@ const Footer = () => {
 
           <div>
             <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Products</h4>
-            <ul className="space-y-2" role="list">
+            <ul className="space-y-2">
               <li>
                 <Link 
                   to="/products/frontpilot" 
@@ -141,7 +141,7 @@ const Footer = () => {
 
           <div>
             <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-gray-300">Connect</h4>
-            <div className="flex space-x-4" role="list">
+            <div className="flex space-x-4">
               <a
                 href="https://www.youtube.com/c/QAFELECTRONICS"
                 target="_blank"
