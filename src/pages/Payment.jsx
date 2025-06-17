@@ -113,9 +113,8 @@ const Payment = () => {
               <div className="bg-primary/10 p-4 rounded-full mr-4">
                 <FaPhoneAlt className="text-primary text-xl" />
               </div>
-              <div>
-                <p className="font-semibold text-lg mb-1">Call Support</p>
-                <p className="text-gray-600 dark:text-gray-400">+1 (555) 123-4567</p>
+              <div>                <p className="font-semibold text-lg mb-1">Connect with us</p>
+                <p className="text-gray-600 dark:text-gray-400">linkedin.com/company/frontronics</p>
                 <p className="text-sm text-gray-500">Available 24/7</p>
               </div>
             </motion.div>
@@ -128,7 +127,7 @@ const Payment = () => {
               </div>
               <div>
                 <p className="font-semibold text-lg mb-1">Email Support</p>
-                <p className="text-gray-600 dark:text-gray-400">support@frontronics.com</p>
+                <p className="text-gray-600 dark:text-gray-400">frontronics.in@gmail.com</p>
                 <p className="text-sm text-gray-500">Response within 24 hours</p>
               </div>
             </motion.div>

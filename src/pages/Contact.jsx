@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import PageLayout from '../components/layout/PageLayout';
+import emailjs from '@emailjs/browser';
+
+// Initialize EmailJS with your public key
+emailjs.init("zj8nMIMW951QFIMCA");
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -29,29 +33,63 @@ const Contact = () => {
       ...prev,
       [name]: value,
     }));
-  };
+  };  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ message: '', isError: false });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-  };
+    setIsSubmitting(true);
+    setSubmitStatus({ message: '', isError: false });    try {
+      const templateParams = {
+        to_name: 'Frontronics Team',
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        reply_to: formData.email
+      };      await emailjs.send(
+        'service_4lj9qyf',  // Your EmailJS service ID
+        'template_qiw43cf', // Your EmailJS template ID
+        templateParams
+      );
 
+      // Clear form after successful submission
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+
+      setSubmitStatus({
+        message: 'Thank you! Your message has been sent successfully.',
+        isError: false
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitStatus({
+        message: 'Sorry, there was an error sending your message. Please try again.',
+        isError: true
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   const contactInfo = [
     {
       icon: <FaEnvelope className="w-5 h-5 sm:w-6 sm:h-6" />,
       title: 'Email',
-      value: 'contact@frontronics.com',
+      value: 'frontronics.in@gmail.com',
     },
     {
       icon: <FaPhone className="w-5 h-5 sm:w-6 sm:h-6" />,
-      title: 'Phone',
-      value: '+1 (555) 123-4567',
+      title: 'LinkedIn',
+      value: 'linkedin.com/company/frontronics',
     },
     {
       icon: <FaMapMarkerAlt className="w-5 h-5 sm:w-6 sm:h-6" />,
       title: 'Address',
-      value: '123 Tech Street, Silicon Valley, CA 94025',
+      value: 'India',
     },
   ];
 
@@ -153,13 +191,26 @@ const Contact = () => {
                   required
                   placeholder="Your message here..."
                 ></textarea>
-              </div>
-              <button
+              </div>              <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity text-base sm:text-lg"
+                disabled={isSubmitting}
+                className={`w-full bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-6 rounded-lg transition-opacity text-base sm:text-lg ${
+                  isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:opacity-90'
+                }`}
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
+              {submitStatus.message && (
+                <div
+                  className={`mt-4 p-3 rounded-lg text-sm ${
+                    submitStatus.isError
+                      ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
+                      : 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
+                  }`}
+                >
+                  {submitStatus.message}
+                </div>
+              )}
             </form>
           </motion.div>
 

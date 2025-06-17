@@ -173,12 +173,11 @@ const Footer = () => {
                 <FaLinkedin size={24} />
               </a>
             </div>
-            <div className="mt-4">
-              <a 
-                href="mailto:contact@frontronics.com" 
+            <div className="mt-4">              <a 
+                href="mailto:frontronics.in@gmail.com" 
                 className="text-sm sm:text-base text-gray-400 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-gray-900 rounded-md inline-block py-1"
               >
-                contact@frontronics.com
+                frontronics.in@gmail.com
               </a>
             </div>
           </div>

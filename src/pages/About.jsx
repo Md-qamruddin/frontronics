@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaRocket, FaUsers, FaLightbulb, FaHandshake } from 'react-icons/fa';
+import { FaRocket, FaUsers, FaLightbulb, FaHandshake, FaLinkedin } from 'react-icons/fa';
 import MrQamruddin from '../assets/Mr.Qamruddin.jpg';
 
 const About = () => {
@@ -114,16 +114,24 @@ const About = () => {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-64 object-cover"
-                />
+                  className="w-full h-64 object-cover"                />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">
                     {member.name}
                   </h3>
                   <p className="text-primary mb-4">{member.role}</p>
-                  <p className="text-gray-600 dark:text-gray-300">
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">
                     {member.bio}
                   </p>
+                  <a
+                    href="https://in.linkedin.com/in/md-qamruddin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-primary hover:text-secondary transition-colors"
+                  >
+                    <FaLinkedin className="w-5 h-5 mr-2" />
+                    Connect on LinkedIn
+                  </a>
                 </div>
               </motion.div>
             ))}

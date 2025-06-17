@@ -32,31 +32,16 @@ const Home = () => {
   // Memoize products array to prevent unnecessary re-renders
   const products = useMemo(() => [
     {
-      title: 'FrontPilot',
-      description: 'AI-powered landing page generator that creates stunning, responsive pages in minutes.',
+      title: 'CV Pilot',
+      description: 'Create professional, ATS-friendly resumes in minutes with our AI-powered CV builder.',
       icon: <FaRobot className="w-6 h-6 sm:w-8 sm:h-8" />,
-      link: '/products/frontpilot',
+      link: '/products/cv-pilot',
       comingSoon: false
     },
-    {
-      title: 'BackPilot',
-      description: 'Automated CRUD and internal tools builder to streamline your backend development.',
+    {      title: 'Coding Toys',
+      description: 'Interactive coding toys and games to make learning programming fun and engaging.',
       icon: <FaServer className="w-6 h-6 sm:w-8 sm:h-8" />,
-      link: '/products/backpilot',
-      comingSoon: true
-    },
-    {
-      title: 'LaunchPad',
-      description: 'Complete deployment and monitoring solution for your applications.',
-      icon: <FaRocket className="w-6 h-6 sm:w-8 sm:h-8" />,
-      link: '/products/launchpad',
-      comingSoon: true
-    },
-    {
-      title: 'AI Assistant',
-      description: 'Intelligent coding assistant that helps you write better code faster.',
-      icon: <FaBrain className="w-6 h-6 sm:w-8 sm:h-8" />,
-      link: '/products/ai-assistant',
+      link: '/products/toys',
       comingSoon: true
     },
   ], []);
