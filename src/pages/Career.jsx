@@ -8,75 +8,75 @@ const Career = () => {
   const jobOpenings = [
     {
       id: 1,
-      title: 'Senior Frontend Developer',
+      title: 'Frontend Development Intern',
       location: 'Remote',
-      type: 'Full-time',
-      description: 'Join our team to build beautiful and performant user interfaces.',
+      type: 'Internship',
+      description: 'Learn and grow with us while building beautiful user interfaces using React and modern frontend technologies.',
       requirements: [
-        '5+ years of experience in React',
-        'Strong TypeScript skills',
-        'Experience with modern frontend tools'
+        'Basic knowledge of HTML, CSS, and JavaScript',
+        'Familiarity with React (projects/coursework)',
+        'Eagerness to learn and grow',
+        'Good communication skills'
       ]
     },
     {
       id: 2,
-      title: 'Backend Engineer',
+      title: 'Full Stack Development Intern',
       location: 'Remote',
-      type: 'Full-time',
-      description: 'Design and implement scalable backend services.',
+      type: 'Internship',
+      description: 'Get hands-on experience with both frontend and backend technologies in a supportive learning environment.',
       requirements: [
-        '3+ years of experience in Node.js',
-        'Experience with databases',
-        'Knowledge of cloud services'
-      ]
-    },
-    {
-      id: 3,
-      title: 'Product Designer',
-      location: 'Remote',
-      type: 'Full-time',
-      description: 'Create amazing user experiences for our products.',
-      requirements: [
-        '3+ years of UI/UX design experience',
-        'Proficiency in Figma',
-        'Strong portfolio'
+        'Basic programming knowledge in any language',
+        'Understanding of web development concepts',
+        'Willingness to learn new technologies',
+        'Team collaboration skills'
       ]
     }
   ];
 
   const benefits = [
     {
-      title: 'Remote Work',
-      description: 'Work from anywhere in the world',
-      icon: '🌍'
+      title: 'Mentorship Program',
+      description: 'Get guidance from experienced professionals',
+      icon: '👨‍🏫'
     },
     {
-      title: 'Learning & Growth',
-      description: 'Continuous learning opportunities',
+      title: 'Skill Development',
+      description: 'Learn cutting-edge technologies and tools',
       icon: '📚'
     },
     {
-      title: 'Health & Wellness',
-      description: 'Comprehensive health benefits',
-      icon: '💪'
+      title: 'Flexible Learning',
+      description: 'Balance work with your studies',
+      icon: '⏰'
     },
     {
-      title: 'Flexible Hours',
-      description: "Work when you're most productive",
-      icon: '⏰'
+      title: 'Real Projects',
+      description: 'Work on actual products and gain experience',
+      icon: '�'
+    },
+    {
+      title: 'Certificate & LOR',
+      description: 'Get completion certificate and recommendation letters',
+      icon: '🏆'
+    },
+    {
+      title: 'Remote Friendly',
+      description: 'Work from anywhere that suits you',
+      icon: '🌍'
     }
   ];
 
   return (
     <PageLayout
-      title="Join Our Team"
-      description="Be part of a team that's building the future of software development."
+      title="Start Your Tech Career With Us"
+      description="Join our internship and trainee programs designed for students and fresh graduates. Learn, grow, and build your future in technology."
     >
       <div className="space-y-16">
         {/* Company Culture Section */}
         <section>
-          <h2 className="text-3xl font-bold mb-8">Why Join Us?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h2 className="text-3xl font-bold mb-8">Why Start Your Career With Us?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((benefit, index) => (
               <motion.div
                 key={index}
@@ -100,7 +100,7 @@ const Career = () => {
 
         {/* Job Openings Section */}
         <section>
-          <h2 className="text-3xl font-bold mb-8">Current Openings</h2>
+          <h2 className="text-3xl font-bold mb-8">Internship & Trainee Opportunities</h2>
           <div className="space-y-6">
             {jobOpenings.map((job) => (
               <motion.div

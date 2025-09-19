@@ -1,68 +1,29 @@
 import { motion } from 'framer-motion';
-import { FaRobot, FaServer } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { FaImage, FaExternalLinkAlt } from 'react-icons/fa';
 import React from 'react';
 import SEO from '../components/SEO';
 
-const Products = () => {  const brands = [
+const FrontSaaS = () => {
+  const products = [
     {
-      title: 'Front Web Services',
-      description: 'Premium SEO & WordPress development services. Complete website solutions from ₹199.',
-      icon: <FaRobot className="w-8 h-8" />,
-      features: ['WordPress Development', 'SEO Optimization', 'Technical Support', 'Domain & Hosting'],
-      link: "https://fws.frontronics.in/",
+      title: 'QuoteCanvas',
+      description: 'AI-powered quote-to-image generator for social media, presentations, and personal inspiration. Create stunning visual quotes in seconds.',
+      icon: <FaImage className="w-6 h-6 sm:w-8 sm:h-8" />,
+      features: ['AI Background Generation', 'High-Quality PNG Export', 'Custom Image Upload', 'Social Media Ready', 'Real-time Preview'],
+      link: "https://quotecanvas.frontronics.in/",
       status: 'Live',
-      category: 'Web Development',
-      pricing: 'Starting ₹199'
-    },
-    {
-      title: 'FrontSaaS',
-      description: 'Digital SaaS products featuring QuoteCanvas - AI-powered quote-to-image generator for social media and content creation.',
-      icon: <FaServer className="w-8 h-8" />,
-      features: ['QuoteCanvas (AI Quote Images)', 'AI Background Generation', 'High-Quality PNG Export', 'Social Media Ready'],
-      link: "/frontsaas",
-      status: 'Live',
-      category: 'SaaS Products',
-      pricing: 'Free with Pro Features'
-    },
-    {
-      title: 'Front Pilot',
-      description: 'Autonomous drone technology for ride services and delivery solutions.',
-      icon: <FaRobot className="w-8 h-8" />,
-      features: ['Autonomous Flying', 'Ride Services', 'Delivery Solutions', 'Smart Navigation'],
-      link: "#",
-      status: 'Coming Soon',
-      category: 'Drone Technology',
-      pricing: 'TBA'
-    },
-    {
-      title: 'Front EV',
-      description: 'Electric vehicle solutions including compact cars like MG Comet alternatives.',
-      icon: <FaServer className="w-8 h-8" />,
-      features: ['Compact Design', 'Electric Powertrain', 'Smart Features', 'Eco-Friendly'],
-      link: "#",
-      status: 'Coming Soon',
-      category: 'Electric Vehicles',
-      pricing: 'TBA'
-    },
-    {
-      title: 'FrontSip',
-      description: 'Premium beverages, snacks, and tea products for modern lifestyle.',
-      icon: <FaRobot className="w-8 h-8" />,
-      features: ['Premium Beverages', 'Healthy Snacks', 'Specialty Teas', 'Modern Packaging'],
-      link: "#",
-      status: 'Coming Soon',
-      category: 'Food & Beverages',
-      pricing: 'TBA'
+      category: 'Creative Tools',
+      pricing: 'Free with Pro Features',
+      users: '1000+ Daily Users'
     }
   ];
 
   return (
     <>
       <SEO 
-        title="Our Brand Portfolio - 5 Innovative Brands | Frontronics"
-        description="Explore Frontronics' complete brand ecosystem: Front Web Services, FrontSaaS, Front Pilot, Front EV, and FrontSip. Innovation across technology, mobility, and lifestyle sectors."
-        canonical="/products"
+        title="FrontSaaS - AI-Powered SaaS Products | Frontronics"
+        description="Explore FrontSaaS products including QuoteCanvas AI quote generator, Analytics Suite, and Code Assistant Pro. Innovative SaaS solutions for modern businesses."
+        canonical="/frontsaas"
         type="website"
       />
       <div className="min-h-screen bg-white dark:bg-gray-900">
@@ -77,22 +38,23 @@ const Products = () => {  const brands = [
               className="text-center"
             >
               <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Our Brand Portfolio
+                FrontSaaS Products
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-                Five innovative brands spanning technology, mobility, and lifestyle sectors
+                AI-powered SaaS solutions designed to enhance productivity and creativity for modern businesses and individuals
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Brands Grid */}
+        {/* Products Grid */}
         <section className="py-20 bg-gray-50 dark:bg-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-              {brands.map((brand, index) => (
+            <div className="flex justify-center">
+              <div className="w-full max-w-md">
+                {products.map((product, index) => (
                 <motion.div
-                  key={brand.title}
+                  key={product.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -100,32 +62,32 @@ const Products = () => {  const brands = [
                   className="bg-white dark:bg-gray-900 rounded-lg p-4 sm:p-5 shadow-lg hover:shadow-xl transition-shadow border-l-4 border-primary"
                 >
                   <div className="flex items-center justify-between mb-4">
-                    <div className="text-primary text-xl">{brand.icon}</div>
+                    <div className="text-primary text-xl">{product.icon}</div>
                     <span className={`text-xs font-semibold px-2 py-1 rounded-full ${
-                      brand.status === 'Live' 
+                      product.status === 'Live' 
                         ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
                         : 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200'
                     }`}>
-                      {brand.status}
+                      {product.status}
                     </span>
                   </div>
                   
                   <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-900 dark:text-white">
-                    {brand.title}
+                    {product.title}
                   </h3>
                   
                   <p className="text-sm text-primary dark:text-primary mb-3 font-medium">
-                    {brand.category}
+                    {product.category}
                   </p>
                   
                   <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
-                    {brand.description}
+                    {product.description}
                   </p>
                   
                   <div className="mb-4">
                     <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">Key Features:</h4>
                     <ul className="space-y-1">
-                      {brand.features.map((feature, i) => (
+                      {product.features.map((feature, i) => (
                         <li key={i} className="text-gray-600 dark:text-gray-300 flex items-center text-sm">
                           <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2 flex-shrink-0"></span>
                           {feature}
@@ -137,12 +99,19 @@ const Products = () => {  const brands = [
                   <div className="flex items-center justify-between mb-4">
                     <div className="text-sm">
                       <span className="text-gray-500 dark:text-gray-400">Pricing: </span>
-                      <span className="font-semibold text-gray-900 dark:text-white">{brand.pricing}</span>
+                      <span className="font-semibold text-gray-900 dark:text-white">{product.pricing}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="text-sm">
+                      <span className="text-gray-500 dark:text-gray-400">Users: </span>
+                      <span className="font-semibold text-primary">{product.users}</span>
                     </div>
                   </div>
                   
                   <div className="mt-auto">
-                    {brand.status === 'Coming Soon' ? (
+                    {product.status === 'Coming Soon' ? (
                       <button 
                         disabled
                         className="w-full bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 font-semibold py-3 px-6 rounded-lg cursor-not-allowed"
@@ -151,51 +120,52 @@ const Products = () => {  const brands = [
                       </button>
                     ) : (
                       <a
-                        href={brand.link}
+                        href={product.link}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block w-full bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity text-center"
                       >
-                        Explore Brand
+                        Try {product.title}
                       </a>
                     )}
                   </div>
                 </motion.div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-primary/10 to-secondary/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Call to Action */}
+        <section className="py-20 bg-white dark:bg-gray-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-center"
             >
-              <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
-                Ready to Partner with Frontronics?
+              <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
+                Ready to Transform Your Workflow?
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-                Join us in revolutionizing multiple industries. Whether you need web services, SaaS solutions, or want to collaborate on future innovations, we're here to help.
+              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+                Join thousands of users who are already leveraging our AI-powered tools to boost their productivity and creativity.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  to="/contact"
-                  className="bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-8 rounded-lg hover:opacity-90 transition-opacity inline-block"
-                >
-                  Get In Touch
-                </Link>
                 <a
-                  href="https://fws.frontronics.in/"
+                  href="https://quotecanvas.frontronics.in/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-2 border-primary text-primary font-semibold py-3 px-8 rounded-lg hover:bg-primary/10 transition-colors inline-block"
+                  className="bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-lg font-semibold text-lg hover:opacity-90 transition-opacity shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform inline-flex items-center justify-center"
                 >
-                  Try Our Services
+                  Try QuoteCanvas Free
+                  <FaExternalLinkAlt className="ml-2 w-4 h-4" />
+                </a>
+                <a
+                  href="/contact"
+                  className="bg-white dark:bg-gray-800 text-primary border-2 border-primary px-8 py-3 rounded-lg font-semibold text-lg hover:bg-primary/10 transition-colors transform hover:scale-105 transition-transform"
+                >
+                  Contact Us
                 </a>
               </div>
             </motion.div>
@@ -206,4 +176,4 @@ const Products = () => {  const brands = [
   );
 };
 
-export default Products;
+export default FrontSaaS;

@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { useTheme } from '../context/ThemeContext';
+
 import logo from '../assets/frontronics.jpg';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { isDarkMode } = useTheme();
+  const [isSupportDropdownOpen, setIsSupportDropdownOpen] = useState(false);
   const location = useLocation();
   const [imgError, setImgError] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const toggleSupportDropdown = () => {
+    setIsSupportDropdownOpen(!isSupportDropdownOpen);
   };
 
   // Close mobile menu when route changes
@@ -88,15 +92,51 @@ const Navbar = () => {
             >
               Contact
             </Link>
-            <Link
-              to="/career"
-              className={`text-gray-800 dark:text-gray-100 hover:text-primary dark:hover:text-primary font-medium ${
-                location.pathname === '/career' ? 'text-primary dark:text-primary' : ''
-              }`}
-              aria-current={location.pathname === '/career' ? 'page' : undefined}
-            >
-              Career
-            </Link>
+            
+            {/* Support Dropdown */}
+            <div className="relative">
+              <button
+                onClick={toggleSupportDropdown}
+                className={`text-gray-800 dark:text-gray-100 hover:text-primary dark:hover:text-primary font-medium flex items-center ${
+                  location.pathname === '/about' || location.pathname === '/career' ? 'text-primary dark:text-primary' : ''
+                }`}
+                aria-expanded={isSupportDropdownOpen}
+              >
+                Support
+                <svg className={`ml-1 h-4 w-4 transition-transform ${isSupportDropdownOpen ? 'rotate-180' : ''}`} fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </button>
+              
+              {isSupportDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50">
+                  <div className="py-1">
+                    <Link
+                      to="/about"
+                      className={`block px-4 py-2 text-sm ${
+                        location.pathname === '/about'
+                          ? 'text-primary dark:text-primary bg-gray-100 dark:bg-gray-700'
+                          : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-primary'
+                      }`}
+                      onClick={() => setIsSupportDropdownOpen(false)}
+                    >
+                      About
+                    </Link>
+                    <Link
+                      to="/career"
+                      className={`block px-4 py-2 text-sm ${
+                        location.pathname === '/career'
+                          ? 'text-primary dark:text-primary bg-gray-100 dark:bg-gray-700'
+                          : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-primary'
+                      }`}
+                      onClick={() => setIsSupportDropdownOpen(false)}
+                    >
+                      Career
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -158,18 +198,37 @@ const Navbar = () => {
           >
             Contact
           </Link>
-          <Link
-            to="/career"
-            className={`block px-3 py-2 rounded-md text-base font-medium ${
-              location.pathname === '/career'
-                ? 'text-primary dark:text-primary bg-gray-100 dark:bg-gray-800'
-                : 'text-gray-800 dark:text-gray-100 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800'
-            }`}
-            onClick={toggleMenu}
-            aria-current={location.pathname === '/career' ? 'page' : undefined}
-          >
-            Career
-          </Link>
+          
+          {/* Support Section - Mobile */}
+          <div className="px-3 py-2">
+            <div className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2">
+              Support
+            </div>
+            <Link
+              to="/about"
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                location.pathname === '/about'
+                  ? 'text-primary dark:text-primary bg-gray-100 dark:bg-gray-800'
+                  : 'text-gray-800 dark:text-gray-100 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800'
+              }`}
+              onClick={toggleMenu}
+              aria-current={location.pathname === '/about' ? 'page' : undefined}
+            >
+              About
+            </Link>
+            <Link
+              to="/career"
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                location.pathname === '/career'
+                  ? 'text-primary dark:text-primary bg-gray-100 dark:bg-gray-800'
+                  : 'text-gray-800 dark:text-gray-100 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800'
+              }`}
+              onClick={toggleMenu}
+              aria-current={location.pathname === '/career' ? 'page' : undefined}
+            >
+              Career
+            </Link>
+          </div>
         </div>
       </div>
     </nav>

@@ -7,50 +7,63 @@ import SEO from '../components/SEO';
 // Memoize features array to prevent unnecessary re-renders
 const features = [
   {
-    title: 'AI-Powered Development',
-    description: 'Leverage cutting-edge AI to accelerate your development process',
+    title: 'Multi-Industry Expertise',
+    description: 'From web development to electric vehicles - we innovate across diverse sectors',
     icon: <FaBrain className="w-6 h-6 sm:w-8 sm:h-8" />,
   },
   {
-    title: 'Secure by Design',
-    description: 'Enterprise-grade security built into every product',
+    title: 'Proven Track Record',
+    description: 'Two successful brands live with Front Web Services and FrontSaaS delivering results',
     icon: <FaShieldAlt className="w-6 h-6 sm:w-8 sm:h-8" />,
   },
   {
-    title: 'Rapid Deployment',
-    description: 'Deploy your applications with confidence and speed',
+    title: 'Future-Ready Innovation',
+    description: 'Building tomorrow\'s solutions in drones, electric vehicles, and lifestyle products',
     icon: <FaRocket className="w-6 h-6 sm:w-8 sm:h-8" />,
   },
   {
-    title: 'Modern Stack',
-    description: 'Built with the latest technologies and best practices',
+    title: 'Affordable Excellence',
+    description: 'Premium services starting at ₹199 - quality solutions accessible to all',
     icon: <FaCode className="w-6 h-6 sm:w-8 sm:h-8" />,
+  },
+  {
+    title: 'End-to-End Solutions',
+    description: 'Complete ecosystem from web services to physical products under one roof',
+    icon: <FaServer className="w-6 h-6 sm:w-8 sm:h-8" />,
+  },
+  {
+    title: 'Visionary Leadership',
+    description: 'Led by experienced founders with a clear roadmap for technological advancement',
+    icon: <FaBrain className="w-6 h-6 sm:w-8 sm:h-8" />,
   },
 ];
 
 const Home = () => {
-  // Memoize products array to prevent unnecessary re-renders
-  const products = useMemo(() => [
+  // Memoize brands array to prevent unnecessary re-renders
+  const brands = useMemo(() => [
     {
-      title: 'CV Pilot',
-      description: 'Create professional, ATS-friendly resumes in minutes with our AI-powered CV builder.',
-      icon: <FaRobot className="w-6 h-6 sm:w-8 sm:h-8" />,
-      link: '/products/cv-pilot',
-      comingSoon: false
+      title: 'Front Web Services',
+      description: 'Premium SEO & WordPress development services. Complete website solutions from ₹199.',
+      icon: <FaCode className="w-6 h-6 sm:w-8 sm:h-8" />,
+      link: "https://fws.frontronics.in/",
+      status: 'Live',
+      category: 'Web Development'
     },
-    {      title: 'Coding Toys',
-      description: 'Interactive coding toys and games to make learning programming fun and engaging.',
-      icon: <FaServer className="w-6 h-6 sm:w-8 sm:h-8" />,
-      link: '/products/toys',
-      comingSoon: true
+    {
+      title: 'FrontSaaS',
+      description: 'Digital SaaS products including QuoteCanvas - AI-powered quote-to-image generator with 1000+ daily users.',
+      icon: <FaRobot className="w-6 h-6 sm:w-8 sm:h-8" />,
+      link: "/frontsaas",
+      status: 'Live',
+      category: 'SaaS Products'
     },
   ], []);
 
   return (
     <>
       <SEO 
-        title="Frontronics - AI-Powered Development Tools & Smart Technology"
-        description="Transform your development process with Frontronics' AI-powered tools. From automated landing pages to intelligent coding assistants, discover our innovative solutions."
+        title="Frontronics - Multi-Industry Innovation Company | 5 Brands Across Technology & Lifestyle"
+        description="Discover Frontronics' diverse brand portfolio: Front Web Services (web development), FrontSaaS (digital products), Front Pilot (drones), Front EV (electric vehicles), and FrontSip (beverages)."
         canonical="/"
       />
       <div className="min-h-screen">
@@ -73,7 +86,7 @@ const Home = () => {
                   Welcome to Frontronics
                 </h2>
                 <p className="text-lg sm:text-xl text-gray-500 dark:text-gray-400">
-                  AI-powered development tools for modern applications
+                  Multi-industry innovation company with 5 distinct brands
                 </p>
               </motion.div>
 
@@ -84,11 +97,11 @@ const Home = () => {
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
-                  Build Better Software
+                  Innovating Across
                 </span>
                 <br />
                 <span className="text-gray-900 dark:text-white">
-                  with AI-Powered Tools
+                  Multiple Industries
                 </span>
               </motion.h1>
 
@@ -98,7 +111,7 @@ const Home = () => {
                 transition={{ duration: 0.4, delay: 0.3 }}
                 className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-6 max-w-3xl mx-auto"
               >
-                Accelerate your development workflow with our suite of intelligent tools designed for modern developers.
+                From web development to electric vehicles, drones to beverages - Frontronics is building the future across diverse sectors.
               </motion.p>
 
               <motion.div
@@ -111,7 +124,7 @@ const Home = () => {
                   to="/products"
                   className="bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 sm:px-8 rounded-lg font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform"
                 >
-                  Explore Our Tools
+                  Explore Our Brands
                 </Link>
                 <Link
                   to="/contact"
@@ -132,17 +145,61 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
               viewport={{ once: true }}
-              className="max-w-3xl mx-auto text-center mb-10 sm:mb-16"
+              className="max-w-4xl mx-auto text-center mb-10 sm:mb-16"
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
                 Why Choose Frontronics?
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300">
-                Our tools are designed to help you build better software, faster.
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8">
+                Your one-stop innovation partner across technology, mobility, and lifestyle - delivering excellence from web services to electric vehicles.
               </p>
+              
+              {/* Stats Section */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center"
+                >
+                  <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">5</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-300">Innovative Brands</div>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="text-center"
+                >
+                  <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">2</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-300">Brands Live</div>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  className="text-center"
+                >
+                  <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">₹199</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-300">Starting Price</div>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  viewport={{ once: true }}
+                  className="text-center"
+                >
+                  <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">3</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-300">Industries</div>
+                </motion.div>
+              </div>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
@@ -150,7 +207,7 @@ const Home = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-5 sm:p-6 hover:shadow-xl transition-shadow duration-300"
+                  className="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-5 sm:p-6 hover:shadow-xl transition-all duration-300 border-l-4 border-primary hover:border-secondary"
                 >
                   <div className="text-primary mb-4">
                     {feature.icon}
@@ -163,7 +220,7 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Products Section */}
+        {/* Brands Section */}
         <section className="py-12 sm:py-16 md:py-20 bg-white dark:bg-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -174,42 +231,56 @@ const Home = () => {
               className="text-center mb-10 sm:mb-16"
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-                Our Products
+                Our Active Brands
               </h2>
               <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                A comprehensive suite of tools to streamline your development workflow
+                Currently active brands delivering innovative solutions in web development and SaaS products
               </p>
             </motion.div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {products.map((product, index) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">
+              {brands.map((brand, index) => (
                 <motion.div
-                  key={product.title}
+                  key={brand.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white dark:bg-gray-900 rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow group"
+                  className="bg-white dark:bg-gray-900 rounded-lg p-4 sm:p-5 shadow-lg hover:shadow-xl transition-shadow group border-l-4 border-primary"
                 >
-                  <div className="text-primary mb-4">
-                    {product.icon}
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="text-primary text-xl">
+                      {brand.icon}
+                    </div>
+                    <span className={`text-xs font-semibold px-2 py-1 rounded-full ${
+                      brand.status === 'Live' 
+                        ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
+                        : 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200'
+                    }`}>
+                      {brand.status}
+                    </span>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-gray-900 dark:text-white">
-                    {product.title}
+                  <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+                    {brand.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-6 text-sm sm:text-base">
-                    {product.description}
+                  <p className="text-sm text-primary dark:text-primary mb-2 font-medium">
+                    {brand.category}
+                  </p>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">
+                    {brand.description}
                   </p>
                   <div className="mt-auto">
-                    {product.comingSoon ? (
+                    {brand.status === 'Coming Soon' ? (
                       <span className="inline-block bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm font-medium px-3 py-1 rounded-full">
-                        Coming Soon
+                        Launching Soon
                       </span>
                     ) : (
-                      <Link
-                        to={product.link}
+                      <a
+                        href={brand.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-flex items-center text-primary font-medium hover:underline"
                       >
-                        Learn more
+                        Explore Brand
                         <svg
                           className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"
                           fill="currentColor"
@@ -222,7 +293,7 @@ const Home = () => {
                             clipRule="evenodd"
                           ></path>
                         </svg>
-                      </Link>
+                      </a>
                     )}
                   </div>
                 </motion.div>
@@ -241,17 +312,25 @@ const Home = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-                Ready to supercharge your development?
+                Ready to explore our ecosystem?
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-                Join thousands of developers who are building faster and smarter with Frontronics tools.
+                Discover how Frontronics is revolutionizing multiple industries with innovative solutions across technology, mobility, and lifestyle.
               </p>
-              <Link
-                to="/products"
-                className="inline-block bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity shadow-lg"
-              >
-                Get Started Today
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  to="/products"
+                  className="inline-block bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity shadow-lg"
+                >
+                  Explore Our Brands
+                </Link>
+                <Link
+                  to="/contact"
+                  className="inline-block bg-white dark:bg-gray-800 text-primary border-2 border-primary px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-primary/10 transition-colors"
+                >
+                  Partner With Us
+                </Link>
+              </div>
             </motion.div>
           </div>
         </section>

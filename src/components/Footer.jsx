@@ -13,15 +13,17 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white pt-12 sm:pt-16 pb-6 sm:pb-8" role="contentinfo">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-          <div className="col-span-2 md:col-span-1 mb-6 md:mb-0">
-            <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4">
-              Frontronics
-            </h3>
-            <p className="text-sm sm:text-base text-gray-400 max-w-xs">
-              Building the future of web development with AI-powered tools and innovative solutions.
-            </p>
-          </div>
+        {/* Company Header */}
+        <div className="text-center mb-8 pb-8 border-b border-gray-800">
+          <h3 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4">
+            Frontronics
+          </h3>
+          <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
+            Multi-industry innovation company with 5 brands spanning technology, mobility, and lifestyle sectors.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-8">
 
           <div>
             <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Quick Links</h4>
@@ -82,59 +84,25 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Products</h4>
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Our Brands</h4>
             <ul className="space-y-2">
               <li>
-                <Link 
-                  to="/products/frontpilot" 
-                  className={`text-sm sm:text-base transition-colors inline-block py-1 ${
-                    location.pathname === '/products/frontpilot' 
-                      ? 'text-primary' 
-                      : 'text-gray-400 hover:text-primary'
-                  }`}
-                  aria-current={location.pathname === '/products/frontpilot' ? 'page' : undefined}
+                <a 
+                  href="https://fws.frontronics.in/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm sm:text-base text-gray-400 hover:text-primary transition-colors inline-block py-1"
                 >
-                  FrontPilot
-                </Link>
+                  Front Web Services
+                </a>
               </li>
               <li>
-                <Link 
-                  to="/products/backpilot" 
-                  className={`text-sm sm:text-base transition-colors inline-block py-1 ${
-                    location.pathname === '/products/backpilot' 
-                      ? 'text-primary' 
-                      : 'text-gray-400 hover:text-primary'
-                  }`}
-                  aria-current={location.pathname === '/products/backpilot' ? 'page' : undefined}
+                <a 
+                  href="/frontsaas" 
+                  className="text-sm sm:text-base text-gray-400 hover:text-primary transition-colors inline-block py-1"
                 >
-                  BackPilot
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="/products/ai-assistant" 
-                  className={`text-sm sm:text-base transition-colors inline-block py-1 ${
-                    location.pathname === '/products/ai-assistant' 
-                      ? 'text-primary' 
-                      : 'text-gray-400 hover:text-primary'
-                  }`}
-                  aria-current={location.pathname === '/products/ai-assistant' ? 'page' : undefined}
-                >
-                  AI Assistant
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="/products/launchpad" 
-                  className={`text-sm sm:text-base transition-colors inline-block py-1 ${
-                    location.pathname === '/products/launchpad' 
-                      ? 'text-primary' 
-                      : 'text-gray-400 hover:text-primary'
-                  }`}
-                  aria-current={location.pathname === '/products/launchpad' ? 'page' : undefined}
-                >
-                  LaunchPad
-                </Link>
+                  FrontSaaS
+                </a>
               </li>
             </ul>
           </div>

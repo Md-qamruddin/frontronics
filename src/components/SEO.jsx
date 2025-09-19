@@ -3,12 +3,12 @@ import { Helmet } from 'react-helmet-async';
 import PropTypes from 'prop-types';
 
 const SEO = ({ 
-  title = 'Frontronics - AI-Powered Web Development Tools',
-  description = 'Frontronics builds AI tools to reduce website development risks and time. We also create innovative electronic toys using smart tech.',
+  title = 'Frontronics - Multi-Industry Innovation Company',
+  description = 'Frontronics is a multi-industry innovation company with 5 brands: Front Web Services (web development), FrontSaaS (digital products), Front Pilot (drones), Front EV (electric vehicles), and FrontSip (beverages).',
   canonical,
   image = 'https://frontronics.in/static/media/frontronics.a7d5589f3c17807ddd65.jpg',
   type = 'website',
-  keywords = 'AI tools, web development, electronic toys, smart technology, development automation, FrontPilot, BackPilot, AI Assistant'
+  keywords = 'multi-industry company, web development services, SaaS products, drone technology, electric vehicles, beverages, Front Web Services, FrontSaaS, Front Pilot, Front EV, FrontSip, innovation, technology'
 }) => {
   const siteUrl = 'https://frontronics.in';
   const pageUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;

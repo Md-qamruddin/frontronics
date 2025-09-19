@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
-import Navbar from './components/layout/Navbar'
+import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
@@ -11,8 +11,7 @@ import Career from './pages/Career'
 import About from './pages/About'
 import Blog from './pages/Blog'
 import Payment from './pages/Payment'
-import Toys from './pages/products/Toys'
-import CVPilot from './pages/products/CVPilot'
+import FrontSaaS from './pages/FrontSaaS'
 import { SignIn, SignUp } from './components/auth'
 import './App.css'
 
@@ -26,12 +25,11 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/frontsaas" element={<FrontSaaS />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/career" element={<Career />} />
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />            <Route path="/payment" element={<Payment />} />
-            <Route path="/products/toys" element={<Toys />} />
-            <Route path="/products/cv-pilot" element={<CVPilot />} />
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="/forgot-password" element={<div className="min-h-screen flex items-center justify-center">Forgot Password Page (Coming Soon)</div>} />

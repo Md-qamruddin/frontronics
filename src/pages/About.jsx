@@ -52,15 +52,160 @@ const About = () => {
               About Frontronics
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              We're a team of passionate developers and innovators dedicated to building the future of software development.
+              A multi-industry innovation company building the future across technology, mobility, and lifestyle with five distinct brands serving diverse markets.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Values Section */}
+      {/* Brand Portfolio Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+              Our Brand Ecosystem
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">
+              Five innovative brands serving different industries and markets
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border-l-4 border-green-500"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  Front Web Services
+                </h3>
+                <span className="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded-full dark:bg-green-900 dark:text-green-200">
+                  Live
+                </span>
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 mb-2">
+                Premium website development and SEO services
+              </p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                Complete WordPress solutions starting at ₹199
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border-l-4 border-green-500"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  FrontSaaS
+                </h3>
+                <span className="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded-full dark:bg-green-900 dark:text-green-200">
+                  Live
+                </span>
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 mb-2">
+                Digital SaaS products and AI solutions
+              </p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                Cloud-based software solutions for businesses
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border-l-4 border-orange-500"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  Front Pilot
+                </h3>
+                <span className="bg-orange-100 text-orange-800 text-xs font-semibold px-2 py-1 rounded-full dark:bg-orange-900 dark:text-orange-200">
+                  Coming Soon
+                </span>
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 mb-2">
+                Autonomous drone technology for transportation
+              </p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                Ride services and delivery solutions
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border-l-4 border-orange-500"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  Front EV
+                </h3>
+                <span className="bg-orange-100 text-orange-800 text-xs font-semibold px-2 py-1 rounded-full dark:bg-orange-900 dark:text-orange-200">
+                  Coming Soon
+                </span>
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 mb-2">
+                Electric vehicle solutions and technology
+              </p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                Compact electric cars and sustainable mobility
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border-l-4 border-orange-500"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                  FrontSip
+                </h3>
+                <span className="bg-orange-100 text-orange-800 text-xs font-semibold px-2 py-1 rounded-full dark:bg-orange-900 dark:text-orange-200">
+                  Coming Soon
+                </span>
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 mb-2">
+                Premium beverages and lifestyle products
+              </p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                Drinks, snacks, and tea for modern lifestyle
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-16 bg-white dark:bg-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+              Our Core Values
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">
+              The principles that guide all our brands and innovations
+            </p>
+          </motion.div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
             <motion.div
@@ -68,7 +213,7 @@ const About = () => {
                       initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
+                className="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg shadow-lg"
               >
                 <div className="text-center mb-4">
                   {value.icon}
@@ -86,7 +231,7 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 bg-white dark:bg-gray-800">
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
