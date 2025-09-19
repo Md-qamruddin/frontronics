@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaRobot, FaServer, FaBrain, FaRocket } from 'react-icons/fa';
+import { FaRobot, FaServer } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import React from 'react';
 import SEO from '../components/SEO';
