@@ -5,13 +5,11 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
-import Products from './pages/Products'
+import Brands from './pages/Brands'
 import Contact from './pages/Contact'
 import Career from './pages/Career'
 import About from './pages/About'
-import Blog from './pages/Blog'
 import Payment from './pages/Payment'
-import FrontSaaS from './pages/FrontSaaS'
 import { SignIn, SignUp } from './components/auth'
 import './App.css'
 
@@ -24,12 +22,11 @@ const App = () => {
         <main className="flex-grow pt-14 sm:pt-16 md:pt-20">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/frontsaas" element={<FrontSaaS />} />
+            <Route path="/brands" element={<Brands />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/career" element={<Career />} />
             <Route path="/about" element={<About />} />
-            <Route path="/blog" element={<Blog />} />            <Route path="/payment" element={<Payment />} />
+            <Route path="/payment" element={<Payment />} />
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="/forgot-password" element={<div className="min-h-screen flex items-center justify-center">Forgot Password Page (Coming Soon)</div>} />

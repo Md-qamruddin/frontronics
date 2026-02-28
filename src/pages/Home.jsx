@@ -1,24 +1,24 @@
 import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FaRobot, FaServer, FaShieldAlt, FaBrain, FaRocket, FaCode } from 'react-icons/fa';
+import { FaRobot, FaServer, FaShieldAlt, FaBrain, FaRocket, FaCode,FaTools } from 'react-icons/fa';
 import SEO from '../components/SEO';
 
 // Memoize features array to prevent unnecessary re-renders
 const features = [
   {
     title: 'Multi-Industry Expertise',
-    description: 'From web development to electric vehicles - we innovate across diverse sectors',
+    description: 'From web tools to SaaS and web development - we innovate across digital sectors',
     icon: <FaBrain className="w-6 h-6 sm:w-8 sm:h-8" />,
   },
   {
     title: 'Proven Track Record',
-    description: 'Two successful brands live with Front Web Services and FrontSaaS delivering results',
+    description: 'Three successful brands live with Frontools, Front Web Services, and FrontSaaS delivering results',
     icon: <FaShieldAlt className="w-6 h-6 sm:w-8 sm:h-8" />,
   },
   {
     title: 'Future-Ready Innovation',
-    description: 'Building tomorrow\'s solutions in drones, electric vehicles, and lifestyle products',
+    description: 'Building tomorrow\'s solutions in SaaS, web tools, and web development',
     icon: <FaRocket className="w-6 h-6 sm:w-8 sm:h-8" />,
   },
   {
@@ -28,7 +28,7 @@ const features = [
   },
   {
     title: 'End-to-End Solutions',
-    description: 'Complete ecosystem from web services to physical products under one roof',
+    description: 'Complete ecosystem from web tools to SaaS and web development under one roof',
     icon: <FaServer className="w-6 h-6 sm:w-8 sm:h-8" />,
   },
   {
@@ -41,6 +41,16 @@ const features = [
 const Home = () => {
   // Memoize brands array to prevent unnecessary re-renders
   const brands = useMemo(() => [
+      {
+      title: 'Frontools',
+      description: 'A multi-utility developer and SEO tools platform offering fast, browser-based utilities for students, developers, and creators.',
+      icon: <FaTools className="w-8 h-8" />,
+      features: ['Developer Utilities', 'SEO Tools', 'Student Tools', 'Creator Tools'],
+      link: "https://frontools.frontronics.in/",
+      status: 'Live',
+      category: 'Web Tools SaaS',
+      pricing: 'Freemium'
+    },
     {
       title: 'Front Web Services',
       description: 'Premium SEO & WordPress development services. Complete website solutions from ₹199.',
@@ -53,7 +63,7 @@ const Home = () => {
       title: 'FrontSaaS',
       description: 'Digital SaaS products including QuoteCanvas - AI-powered quote-to-image generator with 1000+ daily users.',
       icon: <FaRobot className="w-6 h-6 sm:w-8 sm:h-8" />,
-      link: "/frontsaas",
+      link: "https://frontsaas.frontronics.in/",
       status: 'Live',
       category: 'SaaS Products'
     },
@@ -62,8 +72,8 @@ const Home = () => {
   return (
     <>
       <SEO 
-        title="Frontronics - Multi-Industry Innovation Company | 5 Brands Across Technology & Lifestyle"
-        description="Discover Frontronics' diverse brand portfolio: Front Web Services (web development), FrontSaaS (digital products), Front Pilot (drones), Front EV (electric vehicles), and FrontSip (beverages)."
+        title="Frontronics - Multi-Industry Innovation Company | 3 Brands Across Technology & Lifestyle"
+        description="Discover Frontronics' diverse brand portfolio: Frontools (web tools SaaS), Front Web Services (web development), and FrontSaaS (digital products)."
         canonical="/"
       />
       <div className="min-h-screen">
@@ -86,7 +96,7 @@ const Home = () => {
                   Welcome to Frontronics
                 </h2>
                 <p className="text-lg sm:text-xl text-gray-500 dark:text-gray-400">
-                  Multi-industry innovation company with 5 distinct brands
+                  Multi-industry innovation company with 3 distinct brands
                 </p>
               </motion.div>
 
@@ -111,7 +121,7 @@ const Home = () => {
                 transition={{ duration: 0.4, delay: 0.3 }}
                 className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-6 max-w-3xl mx-auto"
               >
-                From web development to electric vehicles, drones to beverages - Frontronics is building the future across diverse sectors.
+                From web tools to SaaS and web development, Frontronics is building the future across digital sectors.
               </motion.p>
 
               <motion.div
@@ -121,7 +131,7 @@ const Home = () => {
                 className="flex flex-col sm:flex-row gap-4 justify-center"
               >
                 <Link
-                  to="/products"
+                  to="/brands"
                   className="bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 sm:px-8 rounded-lg font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform"
                 >
                   Explore Our Brands
@@ -151,7 +161,7 @@ const Home = () => {
                 Why Choose Frontronics?
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8">
-                Your one-stop innovation partner across technology, mobility, and lifestyle - delivering excellence from web services to electric vehicles.
+                Your one-stop innovation partner across technology, modern theme, and delivering excellence from web services to saas
               </p>
               
               {/* Stats Section */}
@@ -163,7 +173,7 @@ const Home = () => {
                   viewport={{ once: true }}
                   className="text-center"
                 >
-                  <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">5</div>
+                  <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">3</div>
                   <div className="text-sm text-gray-600 dark:text-gray-300">Innovative Brands</div>
                 </motion.div>
                 <motion.div
@@ -173,7 +183,7 @@ const Home = () => {
                   viewport={{ once: true }}
                   className="text-center"
                 >
-                  <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">2</div>
+                  <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">3</div>
                   <div className="text-sm text-gray-600 dark:text-gray-300">Brands Live</div>
                 </motion.div>
                 <motion.div
@@ -183,7 +193,7 @@ const Home = () => {
                   viewport={{ once: true }}
                   className="text-center"
                 >
-                  <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">₹199</div>
+                  <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">₹499</div>
                   <div className="text-sm text-gray-600 dark:text-gray-300">Starting Price</div>
                 </motion.div>
                 <motion.div
@@ -315,11 +325,11 @@ const Home = () => {
                 Ready to explore our ecosystem?
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-                Discover how Frontronics is revolutionizing multiple industries with innovative solutions across technology, mobility, and lifestyle.
+                Discover how Frontronics is revolutionizing digital industries with innovative solutions across web tools, SaaS, and web development.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  to="/products"
+                  to="/brands"
                   className="inline-block bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:opacity-90 transition-opacity shadow-lg"
                 >
                   Explore Our Brands

@@ -20,18 +20,18 @@ const Career = () => {
       ]
     },
     {
-      id: 2,
-      title: 'Full Stack Development Intern',
-      location: 'Remote',
-      type: 'Internship',
-      description: 'Get hands-on experience with both frontend and backend technologies in a supportive learning environment.',
-      requirements: [
-        'Basic programming knowledge in any language',
-        'Understanding of web development concepts',
-        'Willingness to learn new technologies',
-        'Team collaboration skills'
-      ]
-    }
+  id: 2,
+  title: 'MERN Stack Developer Intern',
+  location: 'Remote',
+  type: 'Internship',
+  description: 'Build real-world full-stack web apps using the MERN stack.',
+  requirements: [
+    'Basic knowledge of JavaScript and ES6 concepts',
+    'Understanding of React.js and Node.js fundamentals',
+    'Familiarity with REST APIs and MongoDB',
+    'Willingness to work on live projects and learn collaboratively'
+  ]
+}
   ];
 
   const benefits = [
@@ -40,11 +40,11 @@ const Career = () => {
       description: 'Get guidance from experienced professionals',
       icon: '👨‍🏫'
     },
-    {
-      title: 'Skill Development',
-      description: 'Learn cutting-edge technologies and tools',
-      icon: '📚'
-    },
+    // {
+    //   title: 'Skill Development',
+    //   description: 'Learn cutting-edge technologies and tools',
+    //   icon: '📚'
+    // },
     {
       title: 'Flexible Learning',
       description: 'Balance work with your studies',
@@ -56,8 +56,8 @@ const Career = () => {
       icon: '�'
     },
     {
-      title: 'Certificate & LOR',
-      description: 'Get completion certificate and recommendation letters',
+      title: 'Certificates',
+      description: 'Get Offer letter and completion certificate',
       icon: '🏆'
     },
     {
@@ -134,7 +134,7 @@ const Career = () => {
                         </ul>
                       </div>
                       <Button variant="primary" className="mt-4 md:mt-0">
-                        Apply Now
+                        Coming Soon
                       </Button>
                     </div>
                   </Card.Body>

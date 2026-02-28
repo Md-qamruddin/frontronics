@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
-import { FaRobot, FaServer } from 'react-icons/fa';
+import { FaRobot, FaTools, FaServer } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import React from 'react';
 import SEO from '../components/SEO';
 
-const Products = () => {  const brands = [
+const Brands = () => {
+  const brands = [
     {
       title: 'Front Web Services',
       description: 'Premium SEO & WordPress development services. Complete website solutions from ₹199.',
@@ -13,56 +14,36 @@ const Products = () => {  const brands = [
       link: "https://fws.frontronics.in/",
       status: 'Live',
       category: 'Web Development',
-      pricing: 'Starting ₹199'
+      pricing: 'Starting ₹499'
     },
     {
       title: 'FrontSaaS',
       description: 'Digital SaaS products featuring QuoteCanvas - AI-powered quote-to-image generator for social media and content creation.',
       icon: <FaServer className="w-8 h-8" />,
       features: ['QuoteCanvas (AI Quote Images)', 'AI Background Generation', 'High-Quality PNG Export', 'Social Media Ready'],
-      link: "/frontsaas",
+      link: "https://frontsaas.frontronics.in/",
       status: 'Live',
       category: 'SaaS Products',
       pricing: 'Free with Pro Features'
     },
     {
-      title: 'Front Pilot',
-      description: 'Autonomous drone technology for ride services and delivery solutions.',
-      icon: <FaRobot className="w-8 h-8" />,
-      features: ['Autonomous Flying', 'Ride Services', 'Delivery Solutions', 'Smart Navigation'],
-      link: "#",
-      status: 'Coming Soon',
-      category: 'Drone Technology',
-      pricing: 'TBA'
-    },
-    {
-      title: 'Front EV',
-      description: 'Electric vehicle solutions including compact cars like MG Comet alternatives.',
-      icon: <FaServer className="w-8 h-8" />,
-      features: ['Compact Design', 'Electric Powertrain', 'Smart Features', 'Eco-Friendly'],
-      link: "#",
-      status: 'Coming Soon',
-      category: 'Electric Vehicles',
-      pricing: 'TBA'
-    },
-    {
-      title: 'FrontSip',
-      description: 'Premium beverages, snacks, and tea products for modern lifestyle.',
-      icon: <FaRobot className="w-8 h-8" />,
-      features: ['Premium Beverages', 'Healthy Snacks', 'Specialty Teas', 'Modern Packaging'],
-      link: "#",
-      status: 'Coming Soon',
-      category: 'Food & Beverages',
-      pricing: 'TBA'
+      title: 'Frontools',
+      description: 'A multi-utility developer and SEO tools platform offering fast, browser-based utilities for students, developers, and creators.',
+      icon: <FaTools className="w-8 h-8" />,
+      features: ['Developer Utilities', 'SEO Tools', 'Student Tools', 'Creator Tools'],
+      link: "https://frontools.frontronics.in/",
+      status: 'Live',
+      category: 'Web Tools SaaS',
+      pricing: 'Freemium'
     }
   ];
 
   return (
     <>
       <SEO 
-        title="Our Brand Portfolio - 5 Innovative Brands | Frontronics"
-        description="Explore Frontronics' complete brand ecosystem: Front Web Services, FrontSaaS, Front Pilot, Front EV, and FrontSip. Innovation across technology, mobility, and lifestyle sectors."
-        canonical="/products"
+        title="Our Brand Portfolio - 3 Innovative Brands | Frontronics"
+        description="Explore Frontronics' complete brand ecosystem: Frontools, Front Web Services, and FrontSaaS. Innovation across technology and digital services."
+        canonical="/brands"
         type="website"
       />
       <div className="min-h-screen bg-white dark:bg-gray-900">
@@ -80,7 +61,7 @@ const Products = () => {  const brands = [
                 Our Brand Portfolio
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-                Five innovative brands spanning technology, mobility, and lifestyle sectors
+                Three innovative brands spanning technology and digital services
               </p>
             </motion.div>
           </div>
@@ -206,4 +187,4 @@ const Products = () => {  const brands = [
   );
 };
 
-export default Products;
+export default Brands;

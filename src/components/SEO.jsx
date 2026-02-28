@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 
 const SEO = ({ 
   title = 'Frontronics - Multi-Industry Innovation Company',
-  description = 'Frontronics is a multi-industry innovation company with 5 brands: Front Web Services (web development), FrontSaaS (digital products), Front Pilot (drones), Front EV (electric vehicles), and FrontSip (beverages).',
+  description = 'Frontronics is a multi-industry innovation company with 3 brands: Frontools (web tools SaaS), Front Web Services (web development), and FrontSaaS (digital products).',
   canonical,
   image = 'https://frontronics.in/static/media/frontronics.a7d5589f3c17807ddd65.jpg',
   type = 'website',
-  keywords = 'multi-industry company, web development services, SaaS products, drone technology, electric vehicles, beverages, Front Web Services, FrontSaaS, Front Pilot, Front EV, FrontSip, innovation, technology'
+  keywords = 'multi-industry company, web tools SaaS, web development services, SaaS products, Frontools, Front Web Services, FrontSaaS, innovation, technology'
 }) => {
   const siteUrl = 'https://frontronics.in';
   const pageUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;

@@ -38,7 +38,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow-md fixed w-full z-50">
+    <nav className="bg-gray-900 text-white shadow-md fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Logo */}
@@ -67,38 +67,46 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <Link
               to="/"
-              className={`text-gray-800 dark:text-gray-100 hover:text-primary dark:hover:text-primary font-medium ${
-                location.pathname === '/' ? 'text-primary dark:text-primary' : ''
+              className={`text-gray-100 hover:text-primary font-medium ${
+                location.pathname === '/' ? 'text-primary' : ''
               }`}
               aria-current={location.pathname === '/' ? 'page' : undefined}
             >
               Home
             </Link>
             <Link
-              to="/products"
-              className={`text-gray-800 dark:text-gray-100 hover:text-primary dark:hover:text-primary font-medium ${
-                location.pathname === '/products' ? 'text-primary dark:text-primary' : ''
+              to="/brands"
+              className={`text-gray-100 hover:text-primary font-medium ${
+                location.pathname === '/brands' ? 'text-primary' : ''
               }`}
-              aria-current={location.pathname === '/products' ? 'page' : undefined}
+              aria-current={location.pathname === '/brands' ? 'page' : undefined}
             >
-              Products
+              Brands
             </Link>
             <Link
               to="/contact"
-              className={`text-gray-800 dark:text-gray-100 hover:text-primary dark:hover:text-primary font-medium ${
-                location.pathname === '/contact' ? 'text-primary dark:text-primary' : ''
+              className={`text-gray-100 hover:text-primary font-medium ${
+                location.pathname === '/contact' ? 'text-primary' : ''
               }`}
               aria-current={location.pathname === '/contact' ? 'page' : undefined}
             >
               Contact
             </Link>
+            <a
+              href="https://blog.frontronics.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-100 hover:text-primary font-medium"
+            >
+              Blog
+            </a>
             
             {/* Support Dropdown */}
             <div className="relative">
               <button
                 onClick={toggleSupportDropdown}
-                className={`text-gray-800 dark:text-gray-100 hover:text-primary dark:hover:text-primary font-medium flex items-center ${
-                  location.pathname === '/about' || location.pathname === '/career' ? 'text-primary dark:text-primary' : ''
+                className={`text-gray-100 hover:text-primary font-medium flex items-center ${
+                  location.pathname === '/about' || location.pathname === '/career' ? 'text-primary' : ''
                 }`}
                 aria-expanded={isSupportDropdownOpen}
               >
@@ -109,14 +117,14 @@ const Navbar = () => {
               </button>
               
               {isSupportDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50">
+                <div className="absolute right-0 mt-2 w-48 bg-gray-900 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50">
                   <div className="py-1">
                     <Link
                       to="/about"
                       className={`block px-4 py-2 text-sm ${
                         location.pathname === '/about'
-                          ? 'text-primary dark:text-primary bg-gray-100 dark:bg-gray-700'
-                          : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-primary'
+                          ? 'text-primary bg-gray-800'
+                          : 'text-gray-100 hover:bg-gray-800 hover:text-primary'
                       }`}
                       onClick={() => setIsSupportDropdownOpen(false)}
                     >
@@ -126,8 +134,8 @@ const Navbar = () => {
                       to="/career"
                       className={`block px-4 py-2 text-sm ${
                         location.pathname === '/career'
-                          ? 'text-primary dark:text-primary bg-gray-100 dark:bg-gray-700'
-                          : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-primary'
+                          ? 'text-primary bg-gray-800'
+                          : 'text-gray-100 hover:bg-gray-800 hover:text-primary'
                       }`}
                       onClick={() => setIsSupportDropdownOpen(false)}
                     >
@@ -175,16 +183,16 @@ const Navbar = () => {
             Home
           </Link>
           <Link
-            to="/products"
+            to="/brands"
             className={`block px-3 py-2 rounded-md text-base font-medium ${
-              location.pathname === '/products'
+              location.pathname === '/brands'
                 ? 'text-primary dark:text-primary bg-gray-100 dark:bg-gray-800'
                 : 'text-gray-800 dark:text-gray-100 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800'
             }`}
             onClick={toggleMenu}
-            aria-current={location.pathname === '/products' ? 'page' : undefined}
+            aria-current={location.pathname === '/brands' ? 'page' : undefined}
           >
-            Products
+            Brands
           </Link>
           <Link
             to="/contact"
@@ -201,15 +209,15 @@ const Navbar = () => {
           
           {/* Support Section - Mobile */}
           <div className="px-3 py-2">
-            <div className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2">
+            <div className="text-xs font-semibold text-gray-300 uppercase tracking-wide mb-2">
               Support
             </div>
             <Link
               to="/about"
               className={`block px-3 py-2 rounded-md text-base font-medium ${
                 location.pathname === '/about'
-                  ? 'text-primary dark:text-primary bg-gray-100 dark:bg-gray-800'
-                  : 'text-gray-800 dark:text-gray-100 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800'
+                  ? 'text-primary bg-gray-800'
+                  : 'text-gray-100 hover:bg-gray-800 hover:text-primary'
               }`}
               onClick={toggleMenu}
               aria-current={location.pathname === '/about' ? 'page' : undefined}
@@ -220,13 +228,25 @@ const Navbar = () => {
               to="/career"
               className={`block px-3 py-2 rounded-md text-base font-medium ${
                 location.pathname === '/career'
-                  ? 'text-primary dark:text-primary bg-gray-100 dark:bg-gray-800'
-                  : 'text-gray-800 dark:text-gray-100 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800'
+                  ? 'text-primary bg-gray-800'
+                  : 'text-gray-100 hover:bg-gray-800 hover:text-primary'
               }`}
               onClick={toggleMenu}
               aria-current={location.pathname === '/career' ? 'page' : undefined}
             >
               Career
+            </Link>
+            <Link
+              to="/blog"
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+               location.pathname === '/blog'
+                  ? 'text-primary dark:text-primary bg-gray-100 dark:bg-gray-800'
+                  : 'text-gray-800 dark:text-gray-100 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-800'
+              }`}
+              onClick={toggleMenu}
+              aria-current={location.pathname === '/blog' ? 'page' : undefined}
+            >
+              Blog
             </Link>
           </div>
         </div>

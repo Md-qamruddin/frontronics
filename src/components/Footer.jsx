@@ -19,7 +19,7 @@ const Footer = () => {
             Frontronics
           </h3>
           <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
-            Multi-industry innovation company with 5 brands spanning technology, mobility, and lifestyle sectors.
+            Multi-industry innovation company with 3 brands spanning technology and digital services.
           </p>
         </div>
 
@@ -56,15 +56,15 @@ const Footer = () => {
               </li>
               <li>
                 <Link 
-                  to="/products" 
+                  to="/brands" 
                   className={`text-sm sm:text-base transition-colors inline-block py-1 ${
-                    location.pathname === '/products' 
+                    location.pathname === '/brands' 
                       ? 'text-primary' 
                       : 'text-gray-400 hover:text-primary'
                   }`}
-                  aria-current={location.pathname === '/products' ? 'page' : undefined}
+                  aria-current={location.pathname === '/brands' ? 'page' : undefined}
                 >
-                  Products
+                  Brands
                 </Link>
               </li>
               <li>
@@ -84,7 +84,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Our Brands</h4>
+            <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-white">Our Brands</h4>
             <ul className="space-y-2">
               <li>
                 <a 
@@ -98,7 +98,9 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="/frontsaas" 
+                  href="https://frontsaas.frontronics.in/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm sm:text-base text-gray-400 hover:text-primary transition-colors inline-block py-1"
                 >
                   FrontSaaS
@@ -121,7 +123,7 @@ const Footer = () => {
                 <FaYoutube size={24} />
               </a>
               <a
-                href="https://www.instagram.com/frontronics"
+                href="https://www.instagram.com/frontronics_official/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary transition-colors p-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-gray-900 rounded-md"

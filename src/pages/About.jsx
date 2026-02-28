@@ -52,7 +52,7 @@ const About = () => {
               About Frontronics
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              A multi-industry innovation company building the future across technology, mobility, and lifestyle with five distinct brands serving diverse markets.
+              A multi-industry innovation company building the future across technology and digital services with three distinct brands serving diverse markets.
             </p>
           </motion.div>
         </div>
@@ -71,7 +71,7 @@ const About = () => {
               Our Brand Ecosystem
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300">
-              Five innovative brands serving different industries and markets
+              Three innovative brands serving different industries and markets
             </p>
           </motion.div>
 
@@ -94,7 +94,7 @@ const About = () => {
                 Premium website development and SEO services
               </p>
               <p className="text-sm text-gray-500 dark:text-gray-400">
-                Complete WordPress solutions starting at ₹199
+                Complete WordPress solutions starting at ₹499
               </p>
             </motion.div>
 
@@ -121,6 +121,28 @@ const About = () => {
             </motion.div>
 
             <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.2 }}
+  className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg border-l-4 border-green-500"
+>
+  <div className="flex items-center justify-between mb-4">
+    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+      Frontools
+    </h3>
+    <span className="bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded-full dark:bg-green-900 dark:text-green-200">
+      Live
+    </span>
+  </div>
+  <p className="text-gray-600 dark:text-gray-300 mb-2">
+    Multi-utility developer and SEO tools platform
+  </p>
+  <p className="text-sm text-gray-500 dark:text-gray-400">
+    Browser-based utilities for students, developers, and creators
+  </p>
+</motion.div>
+
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -184,7 +206,7 @@ const About = () => {
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 Drinks, snacks, and tea for modern lifestyle
               </p>
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
       </section>
@@ -208,23 +230,23 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-            <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 className="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg shadow-lg"
               >
                 <div className="text-center mb-4">
                   {value.icon}
-                      </div>
+                </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white text-center mb-2">
                   {value.title}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 text-center">
                   {value.description}
                 </p>
-            </motion.div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -240,10 +262,10 @@ const About = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Our Team
+              Meet the Founder
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300">
-              Meet the people behind our success
+              The visionary behind Frontronics and its innovative brands
             </p>
           </motion.div>
 
@@ -259,7 +281,7 @@ const About = () => {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-64 object-cover"                />
+                  className="w-full h-64 object-cover" />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">
                     {member.name}
